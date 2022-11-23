@@ -10,8 +10,7 @@ namespace UnitTesting
         [TestMethod]
         public void TestMethod1()
         {
-            safe.lockUnlock("187");
-            safe.lockUnlock("384");
+            safe.lockUnlock("187384");
 
             bool result = safe.getlocked();
             Assert.IsTrue(result);
@@ -19,8 +18,7 @@ namespace UnitTesting
         [TestMethod]
         public void TestMethod2()
         {
-            safe.lockUnlock("18738");
-            safe.lockUnlock("1");
+            safe.lockUnlock("187381");
 
             bool result = safe.getlocked();
             Assert.IsFalse(result);
