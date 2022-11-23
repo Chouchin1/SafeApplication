@@ -1,11 +1,10 @@
 ﻿using SafeApplication;
+namespace SafeApplication;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        Safe safe = new Safe();
-        safe.lockUnlockRand();
-        safe.enterNum();
+        Safe safe = new Safe(new Safe.Something());
     }
 }

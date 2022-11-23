@@ -9,6 +9,11 @@ namespace SafeApplication
 {
     public class Safe
     {
+        public Safe(IUserInput input) {
+            lockUnlockRand();
+            enterNum(input);
+        }
+
         Random rnd = new Random();
         int[] code = { 1, 8, 7, 3, 8 };
         bool locked = true;
@@ -79,32 +84,48 @@ namespace SafeApplication
                                 WriteLine("Locked");
                                 locked = true;
                                 nextNum = 0;
-                                quit = true;
                             }
                             else nextNum = 0;
                             break;
                     }
                 }
             }
-
         }
 
-        public void enterNum()
+        public void enterNum(IUserInput input)
         {
             string entry;
             do
             {
                 WriteLine("Enter code or QUIT to exit:");
-                entry = ReadLine() + "";
+                entry = input.GetInput();
                 lockUnlock(entry);
             } while (entry != "QUIT");
-
         }
         public bool getlocked()
         {
             return locked;
         }
-        
-        
+
+        public interface IUserInput
+        {
+            string GetInput();
+        }
+
+        public class Something : IUserInput
+        {
+            public string GetInput()
+            {
+                return ReadLine()+"";
+            }
+        }
+
+        public class FakeUserInput: IUserInput
+        {
+            public string GetInput()
+            {
+                return "QUIT";
+            }
+        }
     }
 }
