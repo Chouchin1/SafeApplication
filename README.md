@@ -10,6 +10,9 @@ In order to generate unit test coverage, you will need to first install dotnet c
   dotnet tool install -g dotnet-coverage
 Then you will run the command 
   dotnet-coverage collect -f xml -o coverage.xml dotnet test unittesting
-from the correct path. This will run the tests and generate a coverage.xml file that you can open to see the unit coverage
+from the root folder. This will run the tests and generate a coverage.xml file that you can open to see the unit coverage
 
-In order to compile the program you will navigate to the folder which contains the source files (cd  
+In order to compile the program you will navigate to the folder which contains the source files
+  ......\SafeApplication\SafeApplication
+and run 
+  csc program.cs safe.cs
