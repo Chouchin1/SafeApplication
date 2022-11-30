@@ -4,7 +4,6 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Console;
 namespace SafeApplication
 {
     public class Safe
@@ -41,8 +40,8 @@ namespace SafeApplication
                     case 5:
                         if (entry == 1)
                         {
-                            WriteLine("Unlocked");
-                            WriteLine(count);
+                            System.Console.WriteLine("Unlocked");
+                            System.Console.WriteLine(count);
                             locked = false;
                             nextNum = 0;
                             quit = true;
@@ -73,7 +72,7 @@ namespace SafeApplication
                             {
                                 if (locked == true)
                                 {
-                                    WriteLine("Unlocked");
+                                    System.Console.WriteLine("Unlocked");
                                     locked = false;
                                     nextNum = 0;
                                 }
@@ -81,7 +80,7 @@ namespace SafeApplication
                             }
                             else if (currentVal == 4 && locked == false)
                             {
-                                WriteLine("Locked");
+                                System.Console.WriteLine("Locked");
                                 locked = true;
                                 nextNum = 0;
                             }
@@ -97,7 +96,7 @@ namespace SafeApplication
             string entry;
             do
             {
-                WriteLine("Enter code or QUIT to exit:");
+                System.Console.WriteLine("Enter code or QUIT to exit:");
                 entry = input.GetInput();
                 lockUnlock(entry);
             } while (entry != "QUIT");
@@ -116,7 +115,7 @@ namespace SafeApplication
         {
             public string GetInput()
             {
-                return ReadLine()+"";
+                return System.Console.ReadLine()+"";
             }
         }
 

@@ -1,10 +1,12 @@
 ﻿using SafeApplication;
-namespace SafeApplication;
-
-public class Program
+namespace SafeApplication
 {
-    public static void Main(string[] args)
+
+    public class Program
     {
-        Safe safe = new Safe(new Safe.Something());
+        public static void Main(string[] args)
+        {
+            Safe safe = new Safe(new Safe.Something());
+        }
     }
 }
