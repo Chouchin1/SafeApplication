@@ -12,4 +12,4 @@ Then you will run the command
   dotnet-coverage collect -f xml -o coverage.xml dotnet test unittesting
 from the correct path. This will run the tests and generate a coverage.xml file that you can open to see the unit coverage
 
-In order to run the executable file, you will simply need to extract the file and run the executable found under safeApplication-master>safeApplication>bin>debug>net7.0
+In order to compile the program you will navigate to the folder which contains the source files (cd  
